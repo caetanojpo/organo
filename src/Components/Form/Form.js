@@ -6,15 +6,6 @@ import "./Form.css";
 
 export const Form = (props) => {
 
-  const times = [
-    'Programação',
-    'Front-End',
-    'Data Science',
-    'DevOps',
-    'Mobile',
-    'UX e Design',
-    'Inovação'
-  ]
 
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
@@ -30,6 +21,10 @@ export const Form = (props) => {
         imagem,
         time
     })
+    setNome('')
+    setCargo('')
+    setImagem('')
+    setTime('')
   }
 
   return (
@@ -52,7 +47,7 @@ export const Form = (props) => {
         aoAlterado={valor => setImagem(valor)}
         />
         <Lists  
-        obrigatorio={true} label="Time" itens={times}
+        obrigatorio={true} label="Time" itens={props.times}
         valor={time}
         aoAlterado={valor => setTime(valor)}
         >
